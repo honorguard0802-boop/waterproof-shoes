@@ -63,6 +63,123 @@
     /* Keep the brand-story headline on one row at every viewport width. */
     .storyCaption{max-width:none}
     .storyCaption h3{font-size:clamp(22px,4.6vw,66px);white-space:nowrap}
+    #technology {
+      scroll-margin-top: 76px;
+    }
+    #technology .techGrid {
+      max-width: 1460px;
+      margin-inline: auto;
+      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+      align-items: stretch;
+      gap: clamp(28px, 4vw, 64px);
+    }
+    #technology .techArt {
+      aspect-ratio: auto;
+      min-height: clamp(520px, 45vw, 650px);
+      max-height: none;
+      background-position: center 54%;
+    }
+    #technology .techCopy {
+      align-self: center;
+      min-width: 0;
+    }
+    #technology .techCopy h2 {
+      font-size: clamp(36px, 3.5vw, 58px);
+      line-height: 1.12;
+      margin: 12px 0 16px;
+      text-wrap: balance;
+    }
+    #technology .techCopy h2,
+    #technology .techCopy > p,
+    #technology .accContent p {
+      white-space: normal;
+    }
+    #technology .techCopy > p {
+      margin: 0;
+      font-size: 16px;
+      color: #c7cdc4;
+    }
+    #technology .accordion {
+      margin-top: 24px;
+    }
+    #technology .accBtn {
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+    }
+    #technology .accContent {
+      max-height: none;
+    }
+    #technology .accContent p {
+      margin-bottom: 15px;
+      color: #c7cdc4;
+    }
+    .techLayers {
+      margin-top: 26px;
+      padding: clamp(15px, 1.7vw, 23px);
+      border: 1px solid #414a3f;
+      border-top: 2px solid var(--accent);
+      background: linear-gradient(135deg, #242b23, #191d18 75%);
+    }
+    .techLayers h3 {
+      font-size: clamp(20px, 1.7vw, 25px);
+      line-height: 1.25;
+      margin: 0 0 9px;
+    }
+    .techLayers dl {
+      margin: 0;
+    }
+    .techLayer {
+      display: grid;
+      grid-template-columns: minmax(9.6rem, .85fr) minmax(0, 1fr);
+      gap: 4px 14px;
+      align-items: center;
+      padding: 10px 0;
+      border-top: 1px solid #3d463b;
+    }
+    .techLayer:last-child {
+      padding-bottom: 0;
+    }
+    .techLayer dt {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 800;
+    }
+    .techLayer dd {
+      margin: 0;
+      color: #c7cdc4;
+      font-size: 14px;
+    }
+    .techLayerTag {
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 2.4rem;
+      min-height: 1.55rem;
+      background: #352820;
+      border: 1px solid #785340;
+      color: #ffbb92;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    @media (max-width: 940px) {
+      #technology .techGrid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      #technology .techArt {
+        min-height: 0;
+        height: clamp(220px, 56vw, 480px);
+      }
+    }
+    @media (max-width: 480px) {
+      .techLayer {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .techLayer dd {
+        padding-inline-start: calc(2.4rem + 10px);
+      }
+    }
 </style>
 </head>
 <body>
@@ -155,8 +272,54 @@
       <div class="finderPanel"><h3>今天，你要去哪裡？</h3><div class="scenarioGrid"><button class="scenario" data-rec="metro"><b>COMMUTE｜城市通勤</b><span>捷運、機車、雨天步行</span></button><button class="scenario" data-rec="oxford"><b>BUSINESS｜商務上班</b><span>正式穿搭、長時間站立</span></button><button class="scenario" data-rec="nomad"><b>TRAVEL｜旅行健走</b><span>機場、城市旅行、每日萬步</span></button><button class="scenario" data-rec="trail"><b>OUTDOOR｜戶外休閒</b><span>郊山、露營、濕滑路面</span></button></div><div class="recommend" id="recommend"><small>你的建議鞋款</small><strong id="recName">Metro WP 01</strong><button class="btn primary" id="recBtn">查看尺寸 →</button></div></div>
     </section>
 
-    <section class="section technology" id="technology">
-      <div class="techGrid"><div class="techArt" role="img" aria-label="防水鞋面與水珠細節"></div><div class="techCopy"><div class="eyebrow">Engineered for rain</div><h2>阻隔雨水，釋放熱氣。</h2><p>三層結構把防潑水外層、防水透氣膜與親膚內裡整合在輕量鞋身中；不是厚重雨鞋，而是每天都能穿的機能鞋。</p><div class="accordion"><div class="accItem open"><button class="accBtn"><span>01｜HydroShell 防水薄膜</span><span>−</span></button><div class="accContent"><p>微孔結構阻擋外部水滴，同時導出鞋內濕氣，兼顧乾爽與透氣。</p></div></div><div class="accItem"><button class="accBtn"><span>02｜SeamLock 接縫密封</span><span>＋</span></button><div class="accContent"><p>針車接縫以防水膠帶覆蓋，降低鞋面弱點滲水風險。</p></div></div><div class="accItem"><button class="accBtn"><span>03｜StormGrip 濕地鞋底</span><span>＋</span></button><div class="accContent"><p>多向溝槽快速排水，在常見濕滑城市路面提供穩定抓地。</p></div></div></div></div></div>
+    <section class="section technology" id="technology" aria-labelledby="technologyTitle">
+      <div class="techGrid">
+        <div class="techArt" role="img" aria-label="黑色防水鞋的鞋面水珠與鞋底紋路特寫"></div>
+        <div class="techCopy">
+          <div class="eyebrow">Engineered for rain</div>
+          <h2 id="technologyTitle">阻隔雨水，釋放熱氣。</h2>
+          <p>從鞋面、接縫到鞋底，每一處都為雨天通勤而設計。</p>
+
+          <div class="accordion">
+            <div class="accItem open">
+              <button class="accBtn" type="button" aria-expanded="true" aria-controls="techMembrane">
+                <span>01｜HydroShell 防水薄膜</span><span aria-hidden="true">−</span>
+              </button>
+              <div class="accContent" id="techMembrane"><p>微孔結構阻擋外部水滴，同時導出鞋內濕氣。</p></div>
+            </div>
+            <div class="accItem">
+              <button class="accBtn" type="button" aria-expanded="false" aria-controls="techSeams">
+                <span>02｜SeamLock 接縫密封</span><span aria-hidden="true">＋</span>
+              </button>
+              <div class="accContent" id="techSeams" hidden><p>在針車接縫覆蓋防水膠帶，降低雨水從縫線滲入的機會。</p></div>
+            </div>
+            <div class="accItem">
+              <button class="accBtn" type="button" aria-expanded="false" aria-controls="techOutsole">
+                <span>03｜StormGrip 濕地鞋底</span><span aria-hidden="true">＋</span>
+              </button>
+              <div class="accContent" id="techOutsole" hidden><p>鞋底的多向溝槽可排開積水，幫助在濕滑路面保持抓地力。</p></div>
+            </div>
+          </div>
+
+          <div class="techLayers">
+            <h3>三層鞋面結構</h3>
+            <dl>
+              <div class="techLayer">
+                <dt><span class="techLayerTag">外層</span>防潑水鞋面</dt>
+                <dd>讓水滴更容易沿鞋面滑落。</dd>
+              </div>
+              <div class="techLayer">
+                <dt><span class="techLayerTag">中層</span>防水透氣膜</dt>
+                <dd>阻隔外部水滴，讓鞋內濕氣排出。</dd>
+              </div>
+              <div class="techLayer">
+                <dt><span class="techLayerTag">內層</span>親膚內裡</dt>
+                <dd>與腳部接觸的一層，提供柔和觸感。</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section reviews" aria-label="顧客評價"><div class="score"><strong>4.8</strong><div class="stars">★★★★★</div><p>來自 1,286 則已驗證購買評價</p></div><div><blockquote class="quote" id="reviewQuote">「台北連續下雨一整週，鞋內仍然乾爽。最讓我意外的是外型很俐落，搭西裝褲也不突兀。」</blockquote><div class="reviewer"><div class="avatar" id="avatar">陳</div><div><b id="reviewName">陳先生・台北</b><br><small id="reviewProduct">購入 Urban Oxford WP</small></div></div><div class="reviewNav"><button id="prevReview" aria-label="上一則評價">←</button><button id="nextReview" aria-label="下一則評價">→</button></div></div></section>
@@ -198,7 +361,19 @@
     $('#checkoutBtn').onclick=()=>cart.length?toast('示範網站：結帳流程已準備完成'):toast('購物車目前是空的');
     $$('.filter').forEach(b=>{b.setAttribute('aria-selected',String(b.classList.contains('active')));b.onclick=()=>{$$('.filter').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-selected',String(x===b))});const f=b.dataset.filter;const cards=$$('.product');cards.forEach(c=>c.hidden=f==='all'?c.dataset.featured!=='true':!c.dataset.category.split(' ').includes(f));$('#collectionCount').textContent=b.textContent+' · '+cards.filter(c=>!c.hidden).length+' 款'}});
     $$('.scenario').forEach(b=>b.onclick=()=>{$$('.scenario').forEach(x=>x.classList.toggle('active',x===b));const id=b.dataset.rec;$('#recName').textContent=products[id].name;$('#recBtn').dataset.product=id;$('#recommend').classList.add('show')});$('#recBtn').onclick=e=>openProduct(e.currentTarget.dataset.product||'metro');
-    $$('.accBtn').forEach(b=>b.onclick=()=>{const item=b.parentElement,was=item.classList.contains('open');$$('.accItem').forEach(x=>{x.classList.remove('open');x.querySelector('.accBtn span:last-child').textContent='＋'});if(!was){item.classList.add('open');b.querySelector('span:last-child').textContent='−'}});
+    const technologyButtons = $$('#technology .accBtn');
+    technologyButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const shouldExpand = button.getAttribute('aria-expanded') === 'false';
+        technologyButtons.forEach(control => {
+          const expanded = control === button && shouldExpand;
+          control.setAttribute('aria-expanded', String(expanded));
+          control.closest('.accItem').classList.toggle('open', expanded);
+          control.lastElementChild.textContent = expanded ? '−' : '＋';
+          document.getElementById(control.getAttribute('aria-controls')).hidden = !expanded;
+        });
+      });
+    });
     const reviews=[['「台北連續下雨一整週，鞋內仍然乾爽。最讓我意外的是外型很俐落，搭西裝褲也不突兀。」','陳','陳先生・台北','購入 Urban Oxford WP'],['「出差每天走超過一萬步，腳底沒有以前那種疲勞感；遇到午後雷雨也不必換鞋。」','林','林先生・新竹','購入 Nomad Derby WP'],['「郊山下過雨的石階抓地很穩，回到市區穿也不會太像登山鞋，是我想要的平衡。」','黃','黃先生・台中','購入 Trail One GTX']];let ri=0;function showReview(){const r=reviews[ri];$('#reviewQuote').textContent=r[0];$('#avatar').textContent=r[1];$('#reviewName').textContent=r[2];$('#reviewProduct').textContent=r[3]}$('#nextReview').onclick=()=>{ri=(ri+1)%reviews.length;showReview()};$('#prevReview').onclick=()=>{ri=(ri+reviews.length-1)%reviews.length;showReview()};
     const story=$('#storyCarousel'),storySlides=$$('.storySlide',story),storyDots=$$('.storyDot',story),storyProgress=$('#storyProgress');
     let storyIndex=0,storyTimer;
